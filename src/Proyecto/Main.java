@@ -10,4 +10,5 @@ public class Main {
     }
 }
 
-// C:\Users\Usuario\IdeaProjects\entrega-tres-metodolog-a\\usuario.json
+//Pregunta: ¿dónde se guarda el fichero de datos?:
+//C:\Users\amayr\IdeaProjects\entrega tres metodologia\\usuario.json
