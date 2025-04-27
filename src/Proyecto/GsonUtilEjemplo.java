@@ -15,7 +15,6 @@ public class GsonUtilEjemplo {
             e.printStackTrace();
         }
     }
-
     // Método para cargar un objeto desde un archivo JSON
     public static <T> T cargarObjetoDesdeArchivo(String rutaArchivo, Class<T> clase) {
         Gson gson = new Gson();
@@ -26,8 +25,11 @@ public class GsonUtilEjemplo {
             return null;
         }
     }
-
     public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0;i<args.length;i++)
+            sb.append("Argumento " + i + ": " + args[i] + "\n");
+        System.out.println("Argumentos: \n" + sb);
         // Crear una instancia del objeto Usuario
         Usuario usuario = new Usuario("Juan", 30, "juan@example.com");
         // Ruta del archivo donde se guardará el objeto
@@ -40,13 +42,11 @@ public class GsonUtilEjemplo {
             System.out.println("Usuario cargado: " + usuarioCargado.nombre);
         }
     }
-
     // Clase Usuario para los ejemplos
     static class Usuario {
         String nombre;
         int edad;
         String correo;
-
         public Usuario(String nombre, int edad, String correo) {
             this.nombre = nombre;
             this.edad = edad;
