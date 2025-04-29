@@ -1,0 +1,8 @@
+{"nombreAsignatura":"Java","estudiantes":{
+  "cabeza":{"dato":{"nombre":"alumno3","edad":18,"correo":"@alumno3.com"},
+    "siguiente":{"dato":{"nombre":"alumno2","edad":19,"correo":"@alumno2.com"},
+      "siguiente":{"dato":{"nombre":"alumno4","edad":19,"correo":"@alumno4.com"},
+        "siguiente":{"dato":{"nombre":"alumno5","edad":18,"correo":"@alumno5.com"}
+
+      }}}}}}
+
