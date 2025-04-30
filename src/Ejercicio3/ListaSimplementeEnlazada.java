@@ -128,8 +128,7 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
     }
 
 
-//Al guardar un array en JSON con Gson, el proceso
-// es directo porque JSON admite listas y arrays.
+
 
 
 

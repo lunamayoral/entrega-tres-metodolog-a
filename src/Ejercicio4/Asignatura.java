@@ -97,5 +97,3 @@ public class Asignatura {
     }
 
 }
-//La lista de estudiantes dentro de Asignatura aparece como un array en JSON.
-// El archivo JSON se puede editar manualmente.
