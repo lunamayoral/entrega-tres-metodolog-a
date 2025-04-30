@@ -95,5 +95,4 @@ public class Asignatura {
         saveAsignatura(rutaArchivo, l1);
         loadAsignatura(rutaArchivo, l1);
     }
-
 }

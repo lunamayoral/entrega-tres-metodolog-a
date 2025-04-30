@@ -99,6 +99,7 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
             e.printStackTrace();
         }
     }
+
     public static String loadListaSimplementeEnlazada(String rutaArchivo, ListaSimplementeEnlazada l) {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(rutaArchivo)) {
@@ -110,7 +111,7 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
         return rutaArchivo;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         ElementoSE<String> listase = new ElementoSE<>("0");
         ListaSimplementeEnlazada<String> l1 = new ListaSimplementeEnlazada<>(listase);
@@ -122,18 +123,7 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
         l1.add("8");
         String rutaArchivo = "src/Ejercicio3/JSON/ListaSimplementeEnlazada.json";
         saveListaSimplementeEnlazada(rutaArchivo, l1);
-        loadListaSimplementeEnlazada(rutaArchivo,l1);
+        loadListaSimplementeEnlazada(rutaArchivo, l1);
 
-        }
     }
-
-
-
-
-
-
-
-
-
-
-
+}

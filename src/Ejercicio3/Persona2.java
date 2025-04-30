@@ -8,15 +8,15 @@ import java.io.IOException;
 
 public class Persona2 {
 
-        String nombre;
-        int edad;
-        String[] hobbies; // Array dentro del objeto
+    String nombre;
+    int edad;
+    String[] hobbies; // Array dentro del objeto
 
-        public Persona2(String nombre, int edad, String[] hobbies) {
-            this.nombre = nombre;
-            this.edad = edad;
-            this.hobbies = hobbies;
-        }
+    public Persona2(String nombre, int edad, String[] hobbies) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.hobbies = hobbies;
+    }
 
     public static void savePersona2(String rutaArchivo, Persona2 l) {
         Gson gson = new Gson();
@@ -26,6 +26,7 @@ public class Persona2 {
             e.printStackTrace();
         }
     }
+
     public static String loadPersona2(String rutaArchivo, Persona2 l) {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(rutaArchivo)) {
@@ -37,24 +38,13 @@ public class Persona2 {
         return rutaArchivo;
     }
 
-    public static void main(String[] args){
-            Gson gson = new Gson();
-            Persona2 persona = new Persona2("Juan", 30, new String[]{"Fútbol", "Cine", "Lectura"});
-            String json = gson.toJson(persona);
-            System.out.println(json);
-
-
+    public static void main(String[] args) {
+        Gson gson = new Gson();
+        Persona2 persona = new Persona2("Juan", 30, new String[]{"Fútbol", "Cine", "Lectura"});
+        String json = gson.toJson(persona);
+        System.out.println(json);
         String rutaArchivo = "src/Ejercicio3/JSON/Persona2.json";
         savePersona2(rutaArchivo, persona);
-        loadPersona2(rutaArchivo,persona);
-
-        }
-
-
-
-
+        loadPersona2(rutaArchivo, persona);
     }
-
-
-
-
+}
