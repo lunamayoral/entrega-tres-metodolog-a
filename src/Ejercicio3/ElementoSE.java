@@ -21,10 +21,5 @@ public class ElementoSE<T> {
     public void setDato(T dato) {
         this.dato = dato;
     }
-
-    public String toString(){
-        return "Elemento[ dato: " + getDato() + "]";
-    }
-
 }
 

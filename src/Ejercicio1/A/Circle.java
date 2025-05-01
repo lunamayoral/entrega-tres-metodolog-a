@@ -1,8 +1,6 @@
 package Ejercicio1.A;
 
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Circle {
     private double radius;
@@ -35,17 +33,9 @@ public class Circle {
         return "es.uah.matcomp.mp.el1.eja.ejerciciosclases.e1.Circle[radius=" + radius + "]";
     }
 
-    public static void saveCircle(String rutaArchivo, Circle c) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(c, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void main(String[] args){
         Circle c1 = new Circle(1.1);
         String rutaArchivo = "src/Ejercicio1/JSON/CircleA.json";
-        saveCircle(rutaArchivo, c1);
+        guardarObjetoEnArchivo(rutaArchivo, c1);
     }
 }

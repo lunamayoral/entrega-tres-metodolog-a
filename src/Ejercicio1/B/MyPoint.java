@@ -1,8 +1,6 @@
 package Ejercicio1.B;
 
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class MyPoint {
     private int x;
@@ -66,17 +64,9 @@ public class MyPoint {
         return Math.sqrt(this.x*this.x+this.y*this.y);
     }
 
-    public static void savePoint(String rutaArchivo, MyPoint p) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(p, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void main(String[] args){
         MyPoint p1 = new MyPoint(208, 212);
         String rutaArchivo = "src/Ejercicio1/JSON/MyPoint.json";
-        savePoint(rutaArchivo, p1);
+        guardarObjetoEnArchivo(rutaArchivo, p1);
     }
 }

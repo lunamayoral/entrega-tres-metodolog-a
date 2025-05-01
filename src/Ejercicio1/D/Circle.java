@@ -1,8 +1,6 @@
 package Ejercicio1.D;
 
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Circle extends Shape{
     protected double radius;
@@ -46,17 +44,9 @@ public class Circle extends Shape{
         return "Circle [" + super.toString() + "radius=" + radius + "]";
     }
 
-    public static void saveCircle(String rutaArchivo, Circle c) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(c, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void main(String[] args){
         Circle c1 = new Circle(3, "blue", true);
         String rutaArchivo = "src/Ejercicio1/JSON/CircleD.json";
-        saveCircle(rutaArchivo, c1);
+        guardarObjetoEnArchivo(rutaArchivo, c1);
     }
 }

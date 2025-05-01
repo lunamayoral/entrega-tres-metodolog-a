@@ -1,8 +1,5 @@
 package Ejercicio3;
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class ListaSimplementeEnlazada<T> implements Lista<T> {
     protected ElementoSE<T> cabeza;
@@ -91,26 +88,6 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
         return actual;
     }
 
-    public static void saveListaSimplementeEnlazada(String rutaArchivo, ListaSimplementeEnlazada l) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(l, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static String loadListaSimplementeEnlazada(String rutaArchivo, ListaSimplementeEnlazada l) {
-        Gson gson = new Gson();
-        try (FileReader reader = new FileReader(rutaArchivo)) {
-            gson.fromJson(reader, ListaSimplementeEnlazada.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return rutaArchivo;
-    }
-
     public static void main(String[] args) {
 
         ElementoSE<String> listase = new ElementoSE<>("0");
@@ -122,8 +99,6 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
         l1.add("5");
         l1.add("8");
         String rutaArchivo = "src/Ejercicio3/JSON/ListaSimplementeEnlazada.json";
-        saveListaSimplementeEnlazada(rutaArchivo, l1);
-        loadListaSimplementeEnlazada(rutaArchivo, l1);
-
+        guardarObjetoEnArchivo(rutaArchivo, l1);
     }
 }

@@ -1,8 +1,6 @@
 package Ejercicio1.D;
 
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Rectangle extends Shape {
     protected double width;
@@ -58,17 +56,9 @@ public class Rectangle extends Shape {
         return "Rectangle [" + super.toString() + "width=" + width + ", length=" + length + "]";
     }
 
-    public static void saveRectangle(String rutaArchivo, Rectangle r) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(r, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void main(String[] args){
         Rectangle r1 = new Rectangle(7, 9);
         String rutaArchivo = "src/Ejercicio1/JSON/RectangleD.json";
-        saveRectangle(rutaArchivo, r1);
+        guardarObjetoEnArchivo(rutaArchivo, r1);
     }
 }

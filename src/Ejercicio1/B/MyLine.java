@@ -1,8 +1,6 @@
 package Ejercicio1.B;
 
-import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class MyLine {
     private MyPoint begin;
@@ -94,20 +92,11 @@ public class MyLine {
         return "MyLine[begin=" + begin + ",end=" + end + "]";
     }
 
-    public static void saveLine(String rutaArchivo, MyLine l) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(l, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void main(String[] args){
         MyPoint p1 = new MyPoint(204, 208);
         MyPoint p2 = new MyPoint(209, 212);
         MyLine l1 = new MyLine(p1, p2);
         String rutaArchivo = "src/Ejercicio1/JSON/MyLine.json";
-        saveLine(rutaArchivo, l1);
+        guardarObjetoEnArchivo(rutaArchivo, l1);
     }
 }
