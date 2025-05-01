@@ -7,31 +7,33 @@ import java.util.SplittableRandom;
 
 
 public class Main {
-    public static boolean fichero(String archivo, String fichero){
-        boolean res=false;
-        Gson gson=new Gson();
-        switch (archivo){
-            case "init":{
+    public static boolean fichero(String archivo, String fichero) {
+        boolean res = false;
+        Gson gson = new Gson();
+        switch (archivo) {
+            case "init": {
                 DatosAlumno alumno = new DatosAlumno("pepe", 2, "pepe@gmail.com");
                 guardarfichero(fichero, alumno);
-                res=true;
+                res = true;
             }
-            case"show":{
-                DatosAlumno alumnocargado=cargarObjetoDesdeArchivo(fichero,DatosAlumno.class);
-                if(alumnocargado!=null){
+            case "show": {
+                DatosAlumno alumnocargado = cargarObjetoDesdeArchivo(fichero, DatosAlumno.class);
+                if (alumnocargado != null) {
                     System.out.println("correctamente cargado");
-                    System.out.println("nombre: "+alumnocargado.getNombre());
-                    System.out.println("edad: "+alumnocargado.getEdad());
-                    System.out.println("correo: "+alumnocargado.getCorreo());
+                    System.out.println("nombre: " + alumnocargado.getNombre());
+                    System.out.println("edad: " + alumnocargado.getEdad());
+                    System.out.println("correo: " + alumnocargado.getCorreo());
 
-                    res=true;
+                    res = true;
 
                 }
 
             }
         }
         return res;
-    }private static <T> void guardarfichero(String rutaArchivo, T objeto) {
+    }
+
+    private static <T> void guardarfichero(String rutaArchivo, T objeto) {
         Gson gson = new Gson();
         try (FileWriter writer = new FileWriter(rutaArchivo)) {
             gson.toJson(objeto, writer);
@@ -57,14 +59,15 @@ public class Main {
             sb.append("Argumento " + i + ": " + args[i] + "\n");
         System.out.println("Argumentos: \n" + sb);
 
-        if (args.length==2){
-            fichero(args[0],args[1]);
+        if (args.length == 2) {
+            fichero(args[0], args[1]);
 
-        }else{
+        } else {
             System.out.println("Error, la estructura es la siguiente;java -jar NombreDeTuProyecto.jar init dato.json");
         }
     }
 }
+
 
 
 
