@@ -31,21 +31,23 @@ public class Asignatura {
         return estudiantes;
     }
 
-    public ListaSimplementeEnlazada<Estudiante> deleteEstudiane(Estudiante student) {
+    public ListaSimplementeEnlazada<Estudiante> deleteEstudiante(Estudiante student) {
         estudiantes.delete(student);
         return estudiantes;
     }
 
     public ListaSimplementeEnlazada<Estudiante> getTodosLosEstudiantes() {
+
         return this.estudiantes;
     }
 
     public int ratioAsignatura() {
         return estudiantes.getNumElementos();
     }
+    @Override
 
     public String toString() {
-        return "Asignatura[ nombreAsingatura:" + getNombreAsignatura() + " student: " + getEstudiante(student) +
+        return "Asignatura[ nombreAsingatura:" + getNombreAsignatura()  +
                 " todos los estudiantes " + getTodosLosEstudiantes() + " ratio " + ratioAsignatura() + "]";
     }
 
@@ -82,7 +84,7 @@ public class Asignatura {
         l1.addEstudiante(alumno1);
         l1.addEstudiante(alumno4);
         l1.addEstudiante(alumno2);
-        l1.deleteEstudiane(alumno1);
+        l1.deleteEstudiante(alumno1);
         l1.addEstudiante(alumno3);
 
         System.out.println(l1.getEstudiante(alumno1));
