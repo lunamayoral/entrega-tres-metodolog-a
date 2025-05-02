@@ -1,7 +1,4 @@
-package Proyecto;
-import com.google.gson.Gson;
-import java.io.FileReader;
-import java.io.IOException;
+package Ejercicios;
 
 public class Main2 {
     public static void main(String[] args) {

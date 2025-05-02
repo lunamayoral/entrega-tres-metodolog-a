@@ -1,6 +1,6 @@
-package Proyecto;
+package Ejercicios;
 import org.junit.jupiter.api.Test;
-import java.io.File;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.ByteArrayOutputStream;

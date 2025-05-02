@@ -1,4 +1,4 @@
-package Proyecto;
+package Ejercicios;
 
 import org.junit.jupiter.api.Test;
 
