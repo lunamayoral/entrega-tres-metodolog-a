@@ -1,6 +1,8 @@
 package Ejercicio3;
 
 import org.junit.jupiter.api.Test;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -123,5 +125,24 @@ class ListaSimplementeEnlazadaTest {
 
     @Test
     void main() {
+        String RUTA_ARCHIVO = "src/Ejercicio3/JSON/ListaSimplementeEnlazada.json";
+        // Call the main method that builds the list and saves it
+        ListaSimplementeEnlazada.main(new String[]{}); // <--- Replace YourClassName with actual class name holding main
+
+        // Check file was created
+        assertTrue(Files.exists(Paths.get(RUTA_ARCHIVO)), "The JSON file was not created.");
+
+        try {
+            String jsonContent = new String(Files.readAllBytes(Paths.get(RUTA_ARCHIVO)));
+            // Basic checks for the presence of list values in JSON string
+            assertTrue(jsonContent.contains("\"0\""), "JSON should include the first node value '0'.");
+            assertTrue(jsonContent.contains("\"1\""), "JSON should include the value '1'.");
+            assertTrue(jsonContent.contains("\"2\""), "JSON should include the value '2'.");
+            assertTrue(jsonContent.contains("\"3\""), "JSON should include the value '3'.");
+            assertTrue(jsonContent.contains("\"5\""), "JSON should include the value '5'.");
+            assertTrue(jsonContent.contains("\"8\""), "JSON should include the value '8'.");
+        } catch (Exception e) {
+            fail("Could not read JSON file: " + e.getMessage());
+        }
     }
 }
