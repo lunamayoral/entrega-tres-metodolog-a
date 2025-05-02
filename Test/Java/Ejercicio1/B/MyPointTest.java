@@ -75,5 +75,6 @@ class MyPointTest {
 
     @Test
     void main() {
+        MyPoint.main(null);
     }
 }

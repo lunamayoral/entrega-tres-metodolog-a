@@ -59,5 +59,6 @@ class Point2DTest {
 
     @Test
     void main() {
+        Point2D.main(null);
     }
 }
