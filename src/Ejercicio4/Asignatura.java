@@ -1,12 +1,9 @@
 package Ejercicio4;
-
-import Ejercicio3.ElementoSE;
 import Ejercicio3.ListaSimplementeEnlazada;
-import com.google.gson.Gson;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import static Proyecto.GsonUtilEjemplo.cargarObjetoDesdeArchivo;
+import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Asignatura {
     private String nombreAsignatura;
@@ -51,25 +48,7 @@ public class Asignatura {
                 " todos los estudiantes " + getTodosLosEstudiantes() + " ratio " + ratioAsignatura() + "]";
     }
 
-    public static void saveAsignatura(String rutaArchivo, Asignatura l) {
-        Gson gson = new Gson();
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            gson.toJson(l, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static String loadAsignatura(String rutaArchivo, Asignatura l) {
-        Gson gson = new Gson();
-        try (FileReader reader = new FileReader(rutaArchivo)) {
-            gson.fromJson(reader, Asignatura.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return rutaArchivo;
-    }
 
     public static void main(String[] args) {
 
@@ -82,6 +61,7 @@ public class Asignatura {
         Asignatura l1 = new Asignatura("Java", alumnado);
 
         l1.addEstudiante(alumno1);
+
         l1.addEstudiante(alumno4);
         l1.addEstudiante(alumno2);
         l1.deleteEstudiante(alumno1);
@@ -94,7 +74,7 @@ public class Asignatura {
 
 
         String rutaArchivo = "src/Ejercicio4/JSON/Asignatura.json";
-        saveAsignatura(rutaArchivo, l1);
-        loadAsignatura(rutaArchivo, l1);
+        guardarObjetoEnArchivo(rutaArchivo, l1);
+        cargarObjetoDesdeArchivo(rutaArchivo, ListaSimplementeEnlazada.class);
     }
 }

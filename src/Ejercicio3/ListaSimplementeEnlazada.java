@@ -5,6 +5,7 @@ import  Ejercicio4.Asignatura;
 import  Ejercicio4.Estudiante;
 
 
+
 public class ListaSimplementeEnlazada<T> implements Lista<T> {
     protected ElementoSE<T> cabeza;
 
@@ -92,7 +93,18 @@ public class ListaSimplementeEnlazada<T> implements Lista<T> {
         return actual;
     }
 
+@Override
+public String toString(){
+    StringBuilder resultado = new StringBuilder("Lista de Estudiantes:\n");
+    ElementoSE<T> actual = this.cabeza;
 
+    while (actual != null) {
+        resultado.append(actual.getDato().toString()).append("\n");
+        actual = actual.getSiguiente();
+    }
+
+    return resultado.toString();
+}
 
 
 
