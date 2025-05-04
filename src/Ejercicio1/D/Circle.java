@@ -1,6 +1,6 @@
 package Ejercicio1.D;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Circle extends Shape{
     protected double radius;

@@ -1,6 +1,6 @@
 package Ejercicio1.D;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Rectangle extends Shape {
     protected double width;

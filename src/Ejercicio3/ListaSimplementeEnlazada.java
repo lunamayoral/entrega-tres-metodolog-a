@@ -1,8 +1,8 @@
 package Ejercicio3;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
-import  Ejercicio4.Asignatura;
-import  Ejercicio4.Estudiante;
+
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
+
 
 
 
@@ -98,10 +98,15 @@ public String toString(){
     StringBuilder resultado = new StringBuilder("Lista de Estudiantes:\n");
     ElementoSE<T> actual = this.cabeza;
 
-    while (actual != null) {
+    while (actual != null && actual != getUltimo()) {
         resultado.append(actual.getDato().toString()).append("\n");
         actual = actual.getSiguiente();
     }
+        if(actual == getUltimo()){
+            resultado.append(actual.getDato().toString());
+        }else{
+            resultado= null;
+        }
 
     return resultado.toString();
 }
@@ -122,3 +127,4 @@ public String toString(){
         guardarObjetoEnArchivo(rutaArchivo, l1);
     }
 }
+

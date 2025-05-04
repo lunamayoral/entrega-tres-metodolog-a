@@ -1,6 +1,6 @@
 package Ejercicio1.C;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Point3D extends Point2D {
     private float z;

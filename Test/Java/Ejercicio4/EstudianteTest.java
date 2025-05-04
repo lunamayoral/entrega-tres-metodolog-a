@@ -44,6 +44,21 @@ class EstudianteTest {
         student.setCorreo("@terminomedio.com");
         assertEquals(student.getCorreo(),"@terminomedio.com" );
     }
+    @Test
+    void equals(){
+
+
+        Estudiante estudiante1 = new Estudiante("Platón1", 24, "@elplatonico1.com");
+        Estudiante estudiante2 = new Estudiante("Platón2", 23, "@elplatonico2.com");
+        Estudiante estudiante3 = new Estudiante("Platón3", 25, "@elplatonico3.com");
+
+        assertNotEquals(estudiante1, estudiante2);
+        assertEquals(estudiante1, estudiante1);
+        assertNotEquals(estudiante1, estudiante3);
+        assertNotEquals(estudiante1, null);
+        assertNotEquals(estudiante1, new Object());
+    }
+
 
     @Test
     void testToString() {

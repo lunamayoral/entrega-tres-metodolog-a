@@ -1,6 +1,6 @@
 package Ejercicio1.B;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class MyLine {
     private MyPoint begin;

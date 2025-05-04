@@ -2,8 +2,8 @@ package Ejercicio4;
 import Ejercicio3.ListaSimplementeEnlazada;
 
 
-import static Proyecto.GsonUtilEjemplo.cargarObjetoDesdeArchivo;
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.cargarObjetoDesdeArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Asignatura {
     private String nombreAsignatura;
@@ -41,7 +41,7 @@ public class Asignatura {
     public int ratioAsignatura() {
         return estudiantes.getNumElementos();
     }
-    @Override
+     @Override
 
     public String toString() {
         return "Asignatura[ nombreAsingatura:" + getNombreAsignatura()  +
@@ -69,12 +69,14 @@ public class Asignatura {
 
         System.out.println(l1.getEstudiante(alumno1));
         System.out.println(l1.getTodosLosEstudiantes());
-        System.out.println(l1.toString());
+        System.out.println(l1);
 
 
 
         String rutaArchivo = "src/Ejercicio4/JSON/Asignatura.json";
         guardarObjetoEnArchivo(rutaArchivo, l1);
         cargarObjetoDesdeArchivo(rutaArchivo, ListaSimplementeEnlazada.class);
+
+
     }
 }

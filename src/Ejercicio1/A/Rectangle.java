@@ -1,6 +1,6 @@
 package Ejercicio1.A;
 
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Rectangle {
     private float length;

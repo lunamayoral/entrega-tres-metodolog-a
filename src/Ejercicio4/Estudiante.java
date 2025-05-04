@@ -29,6 +29,19 @@ public class Estudiante {
     public void setCorreo(String correo){
         this.correo = correo;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Estudiante that = (Estudiante) obj;
+        //System.out.println("Comparando estudiante: " + this + " con " + obj);
+        return edad == that.edad &&
+                nombre.equals(that.nombre) &&
+                correo.equals(that.correo);
+
+    }
+
     public String toString() {
         return "Estudiante[ nombre:" + getNombre() + " edad: " + getEdad() + " correo: " + getCorreo() + "]";
     }

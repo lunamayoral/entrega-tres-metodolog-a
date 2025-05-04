@@ -124,6 +124,20 @@ class ListaSimplementeEnlazadaTest {
     }
 
     @Test
+void testToString(){
+    ListaSimplementeEnlazada<String> lista = new ListaSimplementeEnlazada<>();
+       lista.add("Alumno1");
+       lista.add("Alumno2");
+       assertEquals( lista.toString(),"Lista de Estudiantes:\n" +
+             "Alumno2\n" +
+              "Alumno1");
+
+
+}
+
+
+
+    @Test
     void main() {
         String RUTA_ARCHIVO = "src/Ejercicio3/JSON/ListaSimplementeEnlazada.json";
         // Call the main method that builds the list and saves it

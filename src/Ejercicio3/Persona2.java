@@ -1,6 +1,6 @@
 package Ejercicio3;
 import com.google.gson.Gson;
-import static Proyecto.GsonUtilEjemplo.guardarObjetoEnArchivo;
+import static Ejercicios.GsonUtilEjemplo.guardarObjetoEnArchivo;
 
 public class Persona2 {
 
