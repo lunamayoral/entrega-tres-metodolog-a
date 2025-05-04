@@ -58,5 +58,6 @@ class Point3DTest {
 
     @Test
     void main() {
+        Point3D.main(null);
     }
 }

@@ -1,4 +1,4 @@
-package Proyecto;
+package Ejercicios;
 
 import com.google.gson.Gson;
 import java.io.FileReader;
@@ -31,7 +31,7 @@ public class GsonUtilEjemplo {
             sb.append("Argumento " + i + ": " + args[i] + "\n");
         System.out.println("Argumentos: \n" + sb);
         // Crear una instancia del objeto Usuario
-        Usuario usuario = new Usuario("Juan", 30, "juan@example.com");
+        Usuario usuario = new Usuario("Juan", 28, "juan@example.com");
         // Ruta del archivo donde se guardará el objeto
         String rutaArchivo = "usuario.json";
         // Guardar el objeto Usuario en un archivo JSON

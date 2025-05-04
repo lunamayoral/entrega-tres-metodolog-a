@@ -42,5 +42,6 @@ class CircleTest {
 
     @Test
     void main() {
+        Circle.main(null);
     }
 }

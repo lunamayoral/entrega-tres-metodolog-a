@@ -174,5 +174,6 @@ class MyLineTest {
 
     @Test
     void main() {
+        MyLine.main(null);
     }
 }

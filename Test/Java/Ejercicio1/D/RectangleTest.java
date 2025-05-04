@@ -56,5 +56,6 @@ class RectangleTest {
 
     @Test
     void main() {
+        Rectangle.main(null);
     }
 }
