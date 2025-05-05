@@ -46,8 +46,6 @@ class EstudianteTest {
     }
     @Test
     void equals(){
-
-
         Estudiante estudiante1 = new Estudiante("Platón1", 24, "@elplatonico1.com");
         Estudiante estudiante2 = new Estudiante("Platón2", 23, "@elplatonico2.com");
         Estudiante estudiante3 = new Estudiante("Platón3", 25, "@elplatonico3.com");

@@ -36,10 +36,7 @@ public class Estudiante {
         if (obj == null || getClass() != obj.getClass()) return false;
         Estudiante that = (Estudiante) obj;
         //System.out.println("Comparando estudiante: " + this + " con " + obj);
-        return edad == that.edad &&
-                nombre.equals(that.nombre) &&
-                correo.equals(that.correo);
-
+        return edad == that.edad && nombre.equals(that.nombre) && correo.equals(that.correo);
     }
 
     public String toString() {
