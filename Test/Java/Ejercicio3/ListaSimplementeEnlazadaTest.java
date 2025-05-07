@@ -131,8 +131,8 @@ void testToString(){
        assertEquals( lista.toString(),"Lista de Estudiantes:\n" +
              "Alumno2\n" +
               "Alumno1");
-
-
+       lista = new ListaSimplementeEnlazada<>();
+       assertNull(lista.toString());
 }
 
 

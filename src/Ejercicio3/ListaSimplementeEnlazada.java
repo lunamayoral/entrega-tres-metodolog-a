@@ -102,10 +102,10 @@ public String toString(){
         resultado.append(actual.getDato().toString()).append("\n");
         actual = actual.getSiguiente();
     }
-        if(actual == getUltimo()){
+        if(actual != null && actual == getUltimo()){
             resultado.append(actual.getDato().toString());
         }else{
-            resultado= null;
+            return null;
         }
 
     return resultado.toString();
